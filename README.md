@@ -1,3 +1,5 @@
+in progress......
+
 App for commenting books. Build with redux.
 
 Redux training.

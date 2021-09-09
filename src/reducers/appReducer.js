@@ -1,6 +1,7 @@
 import { ADD, EDIT, DELETE } from "../actions/appActions";
 
 export const appReducer = (state = [], action) => {
+  console.log(state);
   switch (action.type) {
     case ADD:
       return [...state, action.payload];

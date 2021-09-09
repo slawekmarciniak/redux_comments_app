@@ -42,7 +42,7 @@ const Form = ({
     <form onSubmit={handleSubmit}>
       <div>
         <label>
-          Author:
+          author:
           <input
             onChange={handleChangeAuthor}
             type="text"
@@ -52,15 +52,16 @@ const Form = ({
       </div>
 
       <div>
+        rate
         <label>
-          ocena:
+          :
           <input onChange={handleChangeRate} type="number" value={rateInput} />
         </label>
       </div>
 
       <div>
         <label>
-          komentarz:
+          comment:
           <input
             onChange={handleChangeComment}
             type="text"
@@ -68,7 +69,7 @@ const Form = ({
           />
         </label>
       </div>
-      <button type="submit">{id ? "Edycja oceny" : "Dodaj ocenę"}</button>
+      <button type="submit">{id ? "save" : "add"}</button>
     </form>
   );
 };

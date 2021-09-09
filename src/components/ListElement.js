@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import Form from "./Form";
 
-const Element = ({ author, comment, id, rate }) => {
+const ListElement = ({ author, comment, id, rate }) => {
   const [isVisibleForm, setIsVisibleForm] = useState(false);
 
   const toggleElements = () => setIsVisibleForm((prev) => !prev);
@@ -16,7 +16,7 @@ const Element = ({ author, comment, id, rate }) => {
       rate={rate}
     />
   ) : (
-    <button onClick={toggleElements}>Edytuj książkę</button>
+    <button onClick={toggleElements}>edit rate</button>
   );
   return (
     <li>
@@ -28,4 +28,4 @@ const Element = ({ author, comment, id, rate }) => {
   );
 };
 
-export default Element;
+export default ListElement;

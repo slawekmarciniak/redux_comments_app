@@ -1,8 +1,10 @@
 import { connect } from "react-redux";
-import Element from "./Element";
+import ListElement from "./ListElement";
 
 const List = ({ rates }) => {
-  const ratesElements = rates.map((rate) => <Element key={rate} {...rate} />);
+  const ratesElements = rates.map((rate) => (
+    <ListElement key={rate.id} {...rate} />
+  ));
   return <ul>{ratesElements}</ul>;
 };
 
