@@ -1,11 +1,16 @@
 import { useState } from "react";
+import { connect } from "react-redux";
+import { deleteRate } from "../actions/appActions";
 
 import Form from "./Form";
 
-const ListElement = ({ author, comment, id, rate }) => {
+const ListElement = ({ deleteRate, author, comment, id, rate }) => {
   const [isVisibleForm, setIsVisibleForm] = useState(false);
 
   const toggleElements = () => setIsVisibleForm((prev) => !prev);
+  const handleDeleteButton = () => {
+    deleteRate({ id });
+  };
 
   const formOrButtonElement = isVisibleForm ? (
     <Form
@@ -24,8 +29,14 @@ const ListElement = ({ author, comment, id, rate }) => {
       <p>Ocena: {rate} </p>
       <p>Komentarz: {comment}</p>
       {formOrButtonElement}
+      <button onClick={handleDeleteButton}>delete</button>
     </li>
   );
 };
 
-export default ListElement;
+const connectActionsToProps = {
+  deleteRate,
+};
+const ListConsumer = connect(null, connectActionsToProps)(ListElement);
+
+export default ListConsumer;
